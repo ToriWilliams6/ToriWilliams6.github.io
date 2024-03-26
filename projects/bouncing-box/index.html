@@ -8,7 +8,7 @@
       .box {
         width: 70px;
         height: 70px;
-        background-color: teal;
+        border-color:rgb(146,48,166);
         font-size: 300%;
         text-align: center;
         user-select: none;
@@ -16,6 +16,9 @@
         position: absolute;
         top: 100px;
         left: 0px; /* <--- Change me! */
+        border-style: dotted;
+        border-width: thick;
+        background-color: rgb(213,145,227);
       }
       .board {
         height: 100vh;
@@ -74,7 +77,15 @@
         function update() {
           positionX = positionX + speed;
           moveBoxTo(positionX);
-	
+
+          if(positionX > boardWidth) {
+            speed = speed * -1;
+          }
+
+          if(positionX < 0)
+          {
+            speed = speed * -1;
+          }
         }
 
         /* 
@@ -86,7 +97,15 @@
           positionX = 0;
           points = points + 1;
           changeBoxText(points);
-		  speed = speed + 3;
+          //speed = speed + 3;
+          if(speed > 0)
+          {
+            speed = speed + 3;
+          }
+          else if(speed < 0)
+          {
+            speed = speed - 3;
+          }
         }
       })();
     </script>
