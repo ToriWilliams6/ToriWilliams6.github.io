@@ -8,9 +8,9 @@
       .box {
         width: 70px;
         height: 70px;
-        border-color:rgb(146,48,166);
+        border-color: rgb(146, 48, 166);
         font-size: 300%;
-        color: rgb(13,112,143);
+        color: rgb(13, 112, 143);
         text-align: center;
         user-select: none;
         display: block;
@@ -19,7 +19,7 @@
         left: 0px; /* <--- Change me! */
         border-style: dotted;
         border-width: thick;
-        background-color: rgb(213,145,227);
+        background-color: rgb(213, 145, 227);
       }
       .board {
         height: 100vh;
@@ -79,12 +79,11 @@
           positionX = positionX + speed;
           moveBoxTo(positionX);
 
-          if(positionX > boardWidth) {
+          if (positionX > boardWidth) {
             speed = speed * -1;
           }
 
-          if(positionX < 0)
-          {
+          if (positionX < 0) {
             speed = speed * -1;
           }
         }
@@ -99,12 +98,9 @@
           points = points + 1;
           changeBoxText(points);
           //speed = speed + 3;
-          if(speed > 0)
-          {
+          if (speed > 0) {
             speed = speed + 3;
-          }
-          else if(speed < 0)
-          {
+          } else if (speed < 0) {
             speed = speed - 3;
           }
         }
